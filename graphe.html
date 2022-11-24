@@ -27,8 +27,8 @@ text {
 <script>
 
 // get the data
-d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_arcs.csv?token=GHSAT0AAAAAAB2TKULPBRUDJ3M4BPYYXQH6Y37PMLA", function(links) {
-d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_nodes.csv?token=GHSAT0AAAAAAB2TKULPVRGNS2M3GVEFGLOGY37PLGQ", function(vertices) {
+d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_arcs.csv", function(links) {
+d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_nodes.csv", function(vertices) {
 
     var nodes = {};
 
@@ -45,19 +45,6 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
         link.target = nodes[link.target] || (nodes[link.target] = {name: vertices[Number(link.target)-1].country});
         link.value = +link.value;
     });
-    
-
-    
-    /*links.forEach(function(link) {
-        console.log(nodes[link.source] , link.source);
-        link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
-        link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
-        link.value = +link.value;
-    });*/
-    
-    //console.log(vertices);
-    //console.log(links);
-    //console.log(nodes);
 
     var width = 900,    height = 620;
 
@@ -86,7 +73,8 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
         .attr("markerHeight", 6)
         .attr("orient", "auto")
         .append("svg:path")
-        .attr("d", "M0,-5L10,0L0,5");
+        .attr("d", "M0,-5L10,0L0,5") ;
+        //.style("","") ;
 
     // add the links and the arrows
     var path = svg.append("svg:g").selectAll("path")
@@ -106,8 +94,8 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
         .data(force.nodes())
         .enter().append("g")
         .attr("class", "node")
-        .call(drag);
-        //.call(force.drag);
+        .call(force.drag);
+        //.call(drag);
 
     
     
@@ -124,7 +112,7 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
                         :"#394053"
                     )) ;
             }
-        );
+    );
 
     // add the text 
     node.append("text")
@@ -160,14 +148,14 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
         fisheye.focus(d3.mouse(this));
         
         node.each(function(d) { d.fisheye = fisheye(d); })
-        .attr("cx", function(d) { return d.fisheye.x; })
-        .attr("cy", function(d) { return d.fisheye.y; })
-        .attr("r", function(d) { return d.fisheye.z * 10.5; });
+            .attr("cx", function(d) { return d.fisheye.x; })
+            .attr("cy", function(d) { return d.fisheye.y; })
+            .attr("r", function(d) { return d.fisheye.z * 10.5; });
 
         path.attr("x1", function(d) { return d.source.fisheye.x; })
-                .attr("y1", function(d) { return d.source.fisheye.y; })
-                .attr("x2", function(d) { return d.target.fisheye.x; })
-                .attr("y2", function(d) { return d.target.fisheye.y; });
+            .attr("y1", function(d) { return d.source.fisheye.y; })
+            .attr("x2", function(d) { return d.target.fisheye.x; })
+            .attr("y2", function(d) { return d.target.fisheye.y; });
     });
 
 });
