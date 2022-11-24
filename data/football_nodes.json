@@ -1,0 +1,247 @@
+[
+ {
+   "id": 1,
+   "country": "ARG",
+   "export": 0.3784,
+   "import": 0.7257,
+   "infos": 0.5
+ },
+ {
+   "id": 2,
+   "country": "AUT",
+   "export": 0.707,
+   "import": 0.3091,
+   "infos": 0.5
+ },
+ {
+   "id": 3,
+   "country": "BEL",
+   "export": 0.3112,
+   "import": 0.3627,
+   "infos": 0.5
+ },
+ {
+   "id": 4,
+   "country": "BGR",
+   "export": 0.4901,
+   "import": 0.2231,
+   "infos": 0.5
+ },
+ {
+   "id": 5,
+   "country": "BRA",
+   "export": 0.4183,
+   "import": 0.8734,
+   "infos": 0.5
+ },
+ {
+   "id": 6,
+   "country": "CHE",
+   "export": 0.8277,
+   "import": 0.771,
+   "infos": 0.5
+ },
+ {
+   "id": 7,
+   "country": "CHL",
+   "export": 0.057,
+   "import": 0.466,
+   "infos": 0.5
+ },
+ {
+   "id": 8,
+   "country": "CMR",
+   "export": 0.6661,
+   "import": 0.4183,
+   "infos": 0.5
+ },
+ {
+   "id": 9,
+   "country": "COL",
+   "export": 0.1708,
+   "import": 0.7309,
+   "infos": 0.5
+ },
+ {
+   "id": 10,
+   "country": "DEU",
+   "export": 0.6178,
+   "import": 0.2022,
+   "infos": 0.5
+ },
+ {
+   "id": 11,
+   "country": "DNK",
+   "export": 0.7995,
+   "import": 0.3587,
+   "infos": 0.5
+ },
+ {
+   "id": 12,
+   "country": "ESP",
+   "export": 0.558,
+   "import": 0.5982,
+   "infos": 0.5
+ },
+ {
+   "id": 13,
+   "country": "FRA",
+   "export": 0.6993,
+   "import": 0.2113,
+   "infos": 0.5
+ },
+ {
+   "id": 14,
+   "country": "GBR",
+   "export": 0.8284,
+   "import": 0.4099,
+   "infos": 0.5
+ },
+ {
+   "id": 15,
+   "country": "GRE",
+   "export": 0.8529,
+   "import": 0.5632,
+   "infos": 0.5
+ },
+ {
+   "id": 16,
+   "country": "HRV",
+   "export": 0.657,
+   "import": 0.7437,
+   "infos": 0.5
+ },
+ {
+   "id": 17,
+   "country": "IRN",
+   "export": 0.6526,
+   "import": 0.0804,
+   "infos": 0.5
+ },
+ {
+   "id": 18,
+   "country": "ITA",
+   "export": 0.4556,
+   "import": 0.6498,
+   "infos": 0.5
+ },
+ {
+   "id": 19,
+   "country": "JAM",
+   "export": 0.8974,
+   "import": 0.5263,
+   "infos": 0.5
+ },
+ {
+   "id": 20,
+   "country": "JPN",
+   "export": 0.7505,
+   "import": 0.9353,
+   "infos": 0.5
+ },
+ {
+   "id": 21,
+   "country": "KOR",
+   "export": 0.906,
+   "import": 0.8003,
+   "infos": 0.5
+ },
+ {
+   "id": 22,
+   "country": "MAR",
+   "export": 0.4052,
+   "import": 0.5224,
+   "infos": 0.5
+ },
+ {
+   "id": 23,
+   "country": "MEX",
+   "export": 0.5903,
+   "import": 0.8579,
+   "infos": 0.5
+ },
+ {
+   "id": 24,
+   "country": "NGA",
+   "export": 0.4846,
+   "import": 0.506,
+   "infos": 0.5
+ },
+ {
+   "id": 25,
+   "country": "NLD",
+   "export": 0.6541,
+   "import": 0.5668,
+   "infos": 0.5
+ },
+ {
+   "id": 26,
+   "country": "NOR",
+   "export": 0.7761,
+   "import": 0.4672,
+   "infos": 0.5
+ },
+ {
+   "id": 27,
+   "country": "PRT",
+   "export": 0.1998,
+   "import": 0.4088,
+   "infos": 0.5
+ },
+ {
+   "id": 28,
+   "country": "PRY",
+   "export": 0.5335,
+   "import": 0.8248,
+   "infos": 0.5
+ },
+ {
+   "id": 29,
+   "country": "ROM",
+   "export": 0.6593,
+   "import": 0.5079,
+   "infos": 0.5
+ },
+ {
+   "id": 30,
+   "country": "SCO",
+   "export": 0.943,
+   "import": 0.4508,
+   "infos": 0.5
+ },
+ {
+   "id": 31,
+   "country": "TUN",
+   "export": 0.4882,
+   "import": 0.0647,
+   "infos": 0.5
+ },
+ {
+   "id": 32,
+   "country": "TUR",
+   "export": 0.5347,
+   "import": 0.3531,
+   "infos": 0.5
+ },
+ {
+   "id": 33,
+   "country": "USA",
+   "export": 0.3644,
+   "import": 0.183,
+   "infos": 0.5
+ },
+ {
+   "id": 34,
+   "country": "YUG",
+   "export": 0.5178,
+   "import": 0.772,
+   "infos": 0.5
+ },
+ {
+   "id": 35,
+   "country": "ZAF",
+   "export": 0.7861,
+   "import": 0.6645,
+   "infos": 0.5
+ }
+]
