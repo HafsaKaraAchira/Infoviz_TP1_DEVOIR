@@ -26,9 +26,10 @@ text {
 <script>
 
 // get the data
-d3.csv("./data/football_arcs.csv", function(links) {
+d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_arcs.csv?token=GHSAT0AAAAAAB2TKULPABHFXLP2C55T6MCSY37JNQQ", function(links) {
+d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_arcs.csv?token=GHSAT0AAAAAAB2TKULPABHFXLP2C55T6MCSY37JNQQ", function(nodes) {
 
-var nodes = {};
+    var nodes = {};
 
 // Compute the distinct nodes from the links.
 links.forEach(function(link) {
@@ -47,7 +48,7 @@ var force = d3.layout.force()
     .links(links)
     .size([width, height])
     .linkDistance(60)
-    .charge(-300)
+    .charge(-400)
     .on("tick", tick)
     .start();
 

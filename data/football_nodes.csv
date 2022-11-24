@@ -1,4 +1,4 @@
-ID,COUNTRY,EXPORT,IMPORT,*
+id,country,export,import,infos
 1,"ARG",0.3784,0.7257,0.5
 2,"AUT",0.7070,0.3091,0.5
 3,"BEL",0.3112,0.3627,0.5
