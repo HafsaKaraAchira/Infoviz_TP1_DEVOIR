@@ -107,10 +107,11 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
         .style("fill",
             function(d){
                 return (
-                    vertices[d.index].export>0.5?"#418BB6"
-                    :(vertices[d.index].import>0.5?"#63458A"
-                        :"#394053"
-                    )) ;
+                    vertices[d.index].export>=0.75?"#50868A"
+                    :(vertices[d.index].import>=0.5?"#63458A"
+                    :(vertices[d.index].import>=0.25?"#FA87B3"
+                        :"#D18B17"
+                    ))) ;
             }
     );
 
