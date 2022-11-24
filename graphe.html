@@ -11,7 +11,7 @@ path.link {
 }
 
 circle {
-  fill: #ccc;
+  fill: #63458A;
   stroke: #fff;
   stroke-width: 1.5px;
 }
@@ -27,8 +27,8 @@ text {
 <script>
 
 // get the data
-d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_arcs.csv?token=GHSAT0AAAAAAB2TKULOCLOU744HJMHWIO62Y37MTIQ", function(links) {
-d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_nodes.csv?token=GHSAT0AAAAAAB2TKULOTRUUIH2EUYMGS3DUY37MWUQ", function(vertices) {
+d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_arcs.csv?token=GHSAT0AAAAAAB2TKULPBRUDJ3M4BPYYXQH6Y37PMLA", function(links) {
+d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/master/data/football_nodes.csv?token=GHSAT0AAAAAAB2TKULPVRGNS2M3GVEFGLOGY37PLGQ", function(vertices) {
 
     var nodes = {};
 
@@ -36,11 +36,11 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
     
     //console.log(links);
 
-    console.log(vertices[0].country); 
+    //console.log(vertices[0].country); 
 
     links.forEach(function(link) {
-        console.log(nodes[link.source] , Number(link.source)-1);
-        console.log(nodes[link.target] , Number(link.source)-1);
+        //console.log(nodes[link.source] , Number(link.source)-1);
+        //console.log(nodes[link.target] , Number(link.source)-1);
         link.source = nodes[link.source] || (nodes[link.source] = {name: vertices[Number(link.source)-1].country});
         link.target = nodes[link.target] || (nodes[link.target] = {name: vertices[Number(link.target)-1].country});
         link.value = +link.value;
@@ -57,16 +57,16 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
     
     //console.log(vertices);
     //console.log(links);
-    console.log(nodes);
+    //console.log(nodes);
 
-    var width = 900,    height = 700;
+    var width = 900,    height = 620;
 
     var force = d3.layout.force()
         .nodes(d3.values(nodes))
         .links(links)
         .size([width, height])
         .linkDistance(60)
-        .charge(-400)
+        .charge(-750)
         .on("tick", tick)
         .start();
 
@@ -94,10 +94,11 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
         .enter().append("svg:path")
         .attr("class", "link")
         .attr("marker-end", "url(#end)");
+    
 
     drag = force.drag()
-            .on("dragstart", function(d){
-                d3.select(this).classed("fixed", d.fixed = true);
+        .on("dragstart", function(d){
+            d3.select(this).classed("fixed", d.fixed = true);
         });
 
     // define the nodes
@@ -108,9 +109,22 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
         .call(drag);
         //.call(force.drag);
 
+    
+    
+        console.log(node) ;
+
     // add the nodes
     node.append("circle")
-        .attr("r", 5);
+        .attr("r", 7)
+        .style("fill",
+            function(d){
+                return (
+                    vertices[d.index].export>0.5?"#418BB6"
+                    :(vertices[d.index].import>0.5?"#63458A"
+                        :"#394053"
+                    )) ;
+            }
+        );
 
     // add the text 
     node.append("text")
@@ -142,20 +156,18 @@ d3.csv("https://raw.githubusercontent.com/HafsaKaraAchira/Infoviz_TP1_DEVOIR/mas
                     .distortion(2);
 
     svg.on("mousemove", function() {
+        console.log("mousemove") ;
         fisheye.focus(d3.mouse(this));
-    });
-
-    svg.on("mousemove", function() {
-        fisheye.focus(d3.mouse(this));
+        
         node.each(function(d) { d.fisheye = fisheye(d); })
         .attr("cx", function(d) { return d.fisheye.x; })
         .attr("cy", function(d) { return d.fisheye.y; })
-        .attr("r", function(d) { return d.fisheye.z * 4.5; });
+        .attr("r", function(d) { return d.fisheye.z * 10.5; });
 
-        link.attr("x1", function(d) { return d.source.fisheye.x; })
-            .attr("y1", function(d) { return d.source.fisheye.y; })
-            .attr("x2", function(d) { return d.target.fisheye.x; })
-            .attr("y2", function(d) { return d.target.fisheye.y; });
+        path.attr("x1", function(d) { return d.source.fisheye.x; })
+                .attr("y1", function(d) { return d.source.fisheye.y; })
+                .attr("x2", function(d) { return d.target.fisheye.x; })
+                .attr("y2", function(d) { return d.target.fisheye.y; });
     });
 
 });
